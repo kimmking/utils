@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.kimmking</groupId>
     <artifactId>kk-commons</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <name>kk-commons</name>
     <description>kk-commons</description>
     <url>https://github.com/kimmking/kk-commons</url>
