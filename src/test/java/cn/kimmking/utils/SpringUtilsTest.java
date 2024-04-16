@@ -34,7 +34,7 @@ public class SpringUtilsTest {
 
     @Test
     void test2() {
-        String packages = "io.github.kimmking.";
+        String packages = "cn.kimmking";
 
         System.out.println(" 1. *********** ");
         System.out.println(" => scan all classes for packages: " + packages);
