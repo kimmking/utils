@@ -1,4 +1,4 @@
-package io.github.kimmking.commons;
+package cn.kimmking.utils;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +9,7 @@ import org.springframework.util.Assert;
 import java.util.Arrays;
 import java.util.List;
 
-import static io.github.kimmking.commons.SpringUtils.scanPackages;
+import static cn.kimmking.utils.SpringUtils.scanPackages;
 
 /**
  * Test SpringUtils.

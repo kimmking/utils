@@ -2,12 +2,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>io.github.kimmking</groupId>
-    <artifactId>kk-commons</artifactId>
-    <version>0.0.3</version>
-    <name>kk-commons</name>
-    <description>kk-commons</description>
-    <url>https://github.com/kimmking/kk-commons</url>
+    <groupId>cn.kimmking</groupId>
+    <artifactId>utils</artifactId>
+    <version>0.0.1</version>
+    <name>utils</name>
+    <description>kimmking commons utility libraries</description>
+    <url>https://github.com/kimmking/utils</url>
 
     <properties>
         <spring.version>6.1.4</spring.version>
@@ -29,13 +29,13 @@
 
     <issueManagement>
         <system>github</system>
-        <url>https://github.com/kimmking/kk-commons/issues</url>
+        <url>https://github.com/kimmking/utils/issues</url>
     </issueManagement>
 
     <scm>
-        <connection>scm:git:https://github.com/kimmking/kk-commons.git</connection>
-        <developerConnection>scm:git:https://github.com/kimmking/kk-commons.git</developerConnection>
-        <url>https://github.com/kimmking/kk-commons</url>
+        <connection>scm:git:https://github.com/kimmking/utils.git</connection>
+        <developerConnection>scm:git:https://github.com/kimmking/utils.git</developerConnection>
+        <url>https://github.com/kimmking/utils</url>
     </scm>
 
     <developers>
@@ -53,16 +53,16 @@
             <version>1.18.30</version>
             <optional>true</optional>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>com.squareup.okhttp3</groupId>-->
-<!--            <artifactId>okhttp</artifactId>-->
-<!--            <version>4.12.0</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>com.alibaba</groupId>-->
-<!--            <artifactId>fastjson</artifactId>-->
-<!--            <version>1.2.83</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>4.12.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.83</version>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>
@@ -79,6 +79,26 @@
             <artifactId>spring-context</artifactId>
             <version>${spring.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.4.14</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-to-slf4j</artifactId>
+            <version>2.21.1</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jul-to-slf4j</artifactId>
+            <version>2.0.12</version>
+            <scope>compile</scope>
+        </dependency>
+
 <!--        <dependency>-->
 <!--            <groupId>org.springframework</groupId>-->
 <!--            <artifactId>spring-web</artifactId>-->

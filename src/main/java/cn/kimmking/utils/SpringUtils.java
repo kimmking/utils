@@ -1,4 +1,4 @@
-package io.github.kimmking.commons;
+package cn.kimmking.utils;
 
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
@@ -14,6 +14,8 @@ import org.springframework.util.StringUtils;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Spring Utils.
@@ -21,7 +23,10 @@ import java.util.function.Predicate;
  * @Author : kimmking(kimmking@apache.org)
  * @create 2024/3/26 16:55
  */
+
 public interface SpringUtils {
+
+    Logger log = LoggerFactory.getLogger(SpringUtils.class);
 
     String DEFAULT_RESOURCE_PATTERN = "**/*.class";
 
@@ -35,22 +40,22 @@ public interface SpringUtils {
             }
             String packageSearchPath = ResourcePatternResolver.CLASSPATH_ALL_URL_PREFIX +
                     ClassUtils.convertClassNameToResourcePath(SystemPropertyUtils.resolvePlaceholders(basePackage)) + "/" + DEFAULT_RESOURCE_PATTERN;
-            System.out.println("packageSearchPath="+packageSearchPath);
+            log.debug(" scan packageSearchPath = {}", packageSearchPath);
             try {
                 Resource[] resources = resourcePatternResolver.getResources(packageSearchPath);
                 for (Resource resource : resources) {
-                    //System.out.println(" resource: " + resource.getFilename());
+                    log.debug(" scan resource = {}", resource.getFilename());
                     MetadataReader metadataReader = metadataReaderFactory.getMetadataReader(resource);
                     ClassMetadata classMetadata = metadataReader.getClassMetadata();
                     String className = classMetadata.getClassName();
                     Class<?> clazz = Class.forName(className);
                     if(predicate.test(clazz)) {
-                        //System.out.println(" ===> class: " + className);
+                        log.debug(" scan class = {}", className);
                         results.add(clazz);
                     }
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                log.debug("scan packages and classes failed, and ignore it: {}", e.getMessage());
             }
         }
         return results;

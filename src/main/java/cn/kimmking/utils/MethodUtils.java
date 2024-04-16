@@ -1,11 +1,7 @@
-package io.github.kimmking.commons;
+package cn.kimmking.utils;
 
-import java.lang.annotation.Annotation;
-import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 /**
  * Method Utils.
@@ -40,20 +36,6 @@ public interface MethodUtils {
                 c -> sb.append("_").append(c.getCanonicalName())
         );
         return sb.toString();
-    }
-
-    static List<Field> findAnnotatedField(Class<?> aClass, Class<? extends Annotation> annotationClass) {
-        List<Field> result = new ArrayList<>();
-        while (aClass != null) {
-            Field[] fields = aClass.getDeclaredFields();
-            for (Field f : fields) {
-                if (f.isAnnotationPresent(annotationClass)) {
-                    result.add(f);
-                }
-            }
-            aClass = aClass.getSuperclass();
-        }
-        return result;
     }
 
     static void main(String[] args) {

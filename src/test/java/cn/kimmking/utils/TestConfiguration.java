@@ -1,4 +1,4 @@
-package io.github.kimmking.commons;
+package cn.kimmking.utils;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
